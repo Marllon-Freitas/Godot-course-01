@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1707849493
+::res://::1707863837
 icon.svg::CompressedTexture2D::604587018734561440::1707848081::1707848087::1::::<><>::
 README.md::TextFile::-1::1707849252::0::1::::<><>::
 ::res://graphics/::1707848639
@@ -196,3 +196,12 @@ subatomic.tsoonami.ttf::FontFile::8574866253983231465::1707848639::1707848639::1
 bg.png::CompressedTexture2D::5365250152777691279::1707848639::1707848640::1::::<><>::
 over.png::CompressedTexture2D::5578948681978172481::1707848639::1707848640::1::::<><>::
 progress.png::CompressedTexture2D::8853924883343832186::1707848639::1707848640::1::::<><>::
+::res://scenes/::1707857700
+::res://scenes/levels/::1707858541
+level.tscn::PackedScene::8156755922877696808::1707858541::0::1::::<><>::uid://iu4pvuvhjk6c::::res://icon.svg<>res://scenes/scripts/Logo.gd
+::res://scenes/objects/::1707858433
+bed.tscn::PackedScene::1948759298199695072::1707858433::0::1::::<><>::uid://bvpcmiwfjhurv::::res://graphics/objects/bed.png<>uid://264bsa0fa378::::res://graphics/objects/pillow_large.png<>uid://dt3j0apvecgr2::::res://graphics/objects/pillow_small.png
+::res://scenes/player/::1707858433
+player.tscn::PackedScene::3764196779246659294::1707858433::0::1::::<><>::uid://tsb70eupmtr::::res://graphics/player/player.png<>uid://dtjgmq5w3qq8n::::res://graphics/projectiles/blue.png<>uid://d031lbhg0b3wv::::res://graphics/projectiles/grenade.png
+::res://scenes/scripts/::1707857708
+Logo.gd::GDScript::-1::1707858431::0::1::::<>Sprite2D<>::
