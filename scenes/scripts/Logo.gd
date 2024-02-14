@@ -4,16 +4,19 @@ var pos: Vector2 = Vector2.ZERO
 var test_scale: float = 1
 const speed: float = 2.2
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 	pos = Vector2(200, 100)
 	position = pos
 
-	# var test_rotation: float = 45
+	# to get access to the parents information
+	print($"..".test_array)  # test array is a variable in the parent node
 
-	# # Set the rotation, scale, and color of the sprite
-	# rotation = test_rotation
+	# example accessing a function in the parent node
+	$"..".test_function()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
