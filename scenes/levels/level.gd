@@ -8,17 +8,6 @@ enum States { IDLE, WALK, RUN }
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
-	# this is the same as absolute path
-	# $Sprite2D/Spri2D2/Sprite2D3/Target
-	# Sprite2D
-	# Spri2D2
-	# Sprite2D3
-	# Target
-
-	# after adding in the editor access with unique name
-	# the path is more simple, addressing the node directly
-	# %Target  # this is the same as $Sprite2D/Spri2D2/Sprite2D3/Target
-	# print(%Target)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,9 +20,13 @@ func test_function():
 	print("Hello World")
 
 
-func _on_area_2d_body_entered(_body:Node2D):
-	print("body entered")
+func _on_gate_player_entered_gate(body):
+	print("Player entered gate", body)
 
 
-func _on_area_2d_body_exited(_body:Node2D):
-	print("body exited")
+func _on_player_player_shoot_laser():
+	print("Player shot laser from signal")
+
+
+func _on_player_player_throw_grenade():
+	print("Player threw grenade from signal")

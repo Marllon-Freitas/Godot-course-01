@@ -24,6 +24,6 @@ one_shot = true
 wait_time = 2.0
 one_shot = true
 
-[connection signal="timeout" from="LaserShootTimer" to="." method="_on_laser_shoot_timer_timeout"]
 [connection signal="timeout" from="LaserShootTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="LaserShootTimer" to="." method="_on_laser_shoot_timer_timeout"]
 [connection signal="timeout" from="GranadeReloadTimer" to="." method="_on_granade_reload_timer_timeout"]
