@@ -29,3 +29,11 @@ func _process(_delta):
 
 func test_function():
 	print("Hello World")
+
+
+func _on_area_2d_body_entered(_body:Node2D):
+	print("body entered")
+
+
+func _on_area_2d_body_exited(_body:Node2D):
+	print("body exited")
