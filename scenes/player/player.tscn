@@ -37,7 +37,7 @@ position = Vector2(132, 28)
 position = Vector2(132, 13)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.6, 0.6)
+zoom = Vector2(0.8, 0.8)
 position_smoothing_enabled = true
 
 [connection signal="timeout" from="LaserShootTimer" to="." method="_on_laser_shoot_timer_timeout"]
