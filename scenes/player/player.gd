@@ -23,6 +23,7 @@ func _process(_delta):
 	var player_direction: Vector2 = (get_global_mouse_position() - position).normalized()
 	# laser shooting
 	if Input.is_action_just_pressed("primary action") and can_laser:
+		$GPUParticles2D.emitting = true
 		# randmlly select a marker 2D fo the laser to shoot from
 		var laser_marker: Array = $LaserStartPoitions.get_children()
 		var selected_laser_marker: Node2D = laser_marker[randi() % laser_marker.size()]

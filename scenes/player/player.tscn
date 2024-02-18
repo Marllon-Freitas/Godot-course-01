@@ -1,10 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://btvn1hjkuk2ko"]
+[gd_scene load_steps=8 format=3 uid="uid://btvn1hjkuk2ko"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_m7hld"]
 [ext_resource type="Texture2D" uid="uid://tsb70eupmtr" path="res://graphics/player/player.png" id="1_o58em"]
+[ext_resource type="Texture2D" uid="uid://jiwvx0pi1m7u" path="res://graphics/decals/white.png" id="3_4l6we"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kp52d"]
+custom_solver_bias = 0.184
 radius = 62.0
+
+[sub_resource type="Gradient" id="Gradient_147vd"]
+colors = PackedColorArray(0.117647, 1, 1, 0.384314, 0.52549, 1, 1, 0.478431)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x0ftp"]
+gradient = SubResource("Gradient_147vd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qbe18"]
+particle_flag_disable_z = true
+spread = 15.0
+initial_velocity_min = 1200.0
+initial_velocity_max = 1500.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.2
+scale_max = 0.5
+color = Color(0.2, 1, 1, 0.443137)
+color_ramp = SubResource("GradientTexture1D_x0ftp")
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 31
@@ -41,6 +60,14 @@ position = Vector2(132, 13)
 zoom = Vector2(0.8, 0.8)
 position_smoothing_enabled = true
 
-[connection signal="timeout" from="LaserShootTimer" to="." method="_on_laser_shoot_timer_timeout"]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(137, 21)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_qbe18")
+texture = ExtResource("3_4l6we")
+lifetime = 0.2
+one_shot = true
+
 [connection signal="timeout" from="LaserShootTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="LaserShootTimer" to="." method="_on_laser_shoot_timer_timeout"]
 [connection signal="timeout" from="GranadeReloadTimer" to="." method="_on_granade_reload_timer_timeout"]
