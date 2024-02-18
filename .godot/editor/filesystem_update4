@@ -1,8 +1,9 @@
-res://scenes/projectiles/laser.gd
-res://scenes/levels/level.gd
-res://scenes/player/player.gd
 res://scenes/player/player.tscn
+res://scenes/objects/gate.tscn
+res://scenes/projectiles/grenade.tscn
 res://scenes/levels/level.tscn
 res://scenes/projectiles/laser.tscn
-res://scenes/projectiles/grenade.tscn
 res://scenes/house/House.tscn
+res://scenes/enemies/drone.tscn
+res://scenes/objects/bed.tscn
+res://scenes/objects/billboard.tscn
