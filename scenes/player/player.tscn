@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://btvn1hjkuk2ko"]
+[gd_scene load_steps=9 format=3 uid="uid://btvn1hjkuk2ko"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_m7hld"]
 [ext_resource type="Texture2D" uid="uid://tsb70eupmtr" path="res://graphics/player/player.png" id="1_o58em"]
@@ -24,6 +24,9 @@ scale_min = 0.2
 scale_max = 0.5
 color = Color(0.2, 1, 1, 0.443137)
 color_ramp = SubResource("GradientTexture1D_x0ftp")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2wty1"]
+polygon = PackedVector2Array(14, -55, 4, -56, -6, -51, -7, -53, -11, -54, -22, -47, -23, -44, -25, -42, -29, -44, -37, -42, -44, -37, -48, -32, -48, -28, -54, -20, -55, -15, -55, -4, -54, 10, -50, 17, -46, 18, -45, 21, -47, 24, -46, 29, -43, 34, -39, 37, -37, 37, -36, 42, -32, 49, -30, 56, -24, 61, -15, 63, -7, 64, -2, 62, -2, 62, 8, 60, 19, 56, 28, 50, 37, 49, 46, 44, 58, 45, 64, 45, 64, 52, 65, 54, 68, 56, 98, 56, 101, 54, 101, 48, 106, 46, 113, 39, 120, 40, 128, 41, 126, 35, 131, 36, 136, 33, 138, 21, 137, 13, 133, 9, 128, 12, 129, 8, 128, 6, 119, 5, 114, 1, 104, -1, 93, -7, 83, -6, 67, -21, 56, -25, 49, -34, 49, -37, 41, -45, 34, -55, 27, -58, 17, -56)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 31
@@ -68,6 +71,9 @@ texture = ExtResource("3_4l6we")
 lifetime = 0.2
 one_shot = true
 
-[connection signal="timeout" from="LaserShootTimer" to="." method="_on_timer_timeout"]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_2wty1")
+
 [connection signal="timeout" from="LaserShootTimer" to="." method="_on_laser_shoot_timer_timeout"]
+[connection signal="timeout" from="LaserShootTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="GranadeReloadTimer" to="." method="_on_granade_reload_timer_timeout"]

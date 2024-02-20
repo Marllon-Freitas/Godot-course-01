@@ -162,6 +162,11 @@ position = Vector2(476, 534)
 [node name="Grenade" parent="." instance=ExtResource("4_8tx1j")]
 position = Vector2(231, 497)
 
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.184314, 0.176471, 0.160784, 1)
+energy = 1.24
+blend_mode = 1
+
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="player_shoot_laser" from="Player" to="." method="_on_player_player_shoot_laser"]
 [connection signal="player_throw_grenade" from="Player" to="." method="_on_player_player_throw_grenade"]
