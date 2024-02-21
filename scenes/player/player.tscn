@@ -74,6 +74,6 @@ one_shot = true
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_2wty1")
 
-[connection signal="timeout" from="LaserShootTimer" to="." method="_on_laser_shoot_timer_timeout"]
 [connection signal="timeout" from="LaserShootTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="LaserShootTimer" to="." method="_on_laser_shoot_timer_timeout"]
 [connection signal="timeout" from="GranadeReloadTimer" to="." method="_on_granade_reload_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dohgtws183xeu"]
+[gd_scene load_steps=20 format=3 uid="uid://dohgtws183xeu"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_t7iov"]
 [ext_resource type="Texture2D" uid="uid://cya6pm3pb335y" path="res://graphics/ground/stones.png" id="2_33qrp"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://efydk474i8t7" path="res://graphics/tilesets/soil.png" id="10_e0csb"]
 [ext_resource type="PackedScene" uid="uid://h4thrh0n3lac" path="res://scenes/house/House.tscn" id="11_3qeth"]
 [ext_resource type="PackedScene" uid="uid://buh457p6kh11y" path="res://scenes/objects/steam_vent.tscn" id="12_jaddt"]
+[ext_resource type="PackedScene" uid="uid://dp2x5r00seige" path="res://scenes/objects/light_fan_animation.tscn" id="13_cqe0r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ylngi"]
 resource_name = "walls"
@@ -151,21 +152,27 @@ layer_1/tile_data = PackedInt32Array(-65539, 131072, 0, -65540, 65536, 0, -65541
 [node name="House" parent="Ground" instance=ExtResource("11_3qeth")]
 position = Vector2(-1558, 4111)
 
+[node name="LightFanAnimation" parent="Ground" instance=ExtResource("13_cqe0r")]
+position = Vector2(-780, 3819)
+autoplay = "default"
+frame_progress = 0.243474
+
 [node name="Gate" parent="." instance=ExtResource("2_arb2u")]
 position = Vector2(536, -439)
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("4_1rn2e")]
-position = Vector2(476, 534)
+position = Vector2(-2016, 3346)
 
 [node name="Projectiles" type="Node2D" parent="."]
-
-[node name="Grenade" parent="." instance=ExtResource("4_8tx1j")]
-position = Vector2(231, 497)
+metadata/_edit_lock_ = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 color = Color(0.184314, 0.176471, 0.160784, 1)
 energy = 1.24
 blend_mode = 1
+
+[node name="Grenade" parent="." instance=ExtResource("4_8tx1j")]
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="player_shoot_laser" from="Player" to="." method="_on_player_player_shoot_laser"]
